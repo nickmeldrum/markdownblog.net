@@ -1,0 +1,35 @@
+# dotNet compilation
+syntax: glob
+Web/bin
+[Dd]ebug*/
+[Oo]bj/
+[Rr]elease*/
+[Pp]ackages/*/**
+*.ncb
+
+# squishit compilation: (all source css and js should be in subdirectories)
+syntax: glob
+src/Web/*.css
+src/Web/*.js
+bundles/*.css
+bundles/*.js
+
+# vs user space files
+syntax: glob
+_ReSharper*/
+*.resharper
+*.user
+*.suo
+*.dotCover
+
+# directory files
+syntax: glob
+*.log
+*.DS_Store
+*.[Cc]ache
+[Tt]humbs.db
+
+# backup files
+syntax: glob
+*.bak
+backups*/
