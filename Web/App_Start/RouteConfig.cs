@@ -8,7 +8,7 @@ namespace Web {
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{*url}",
                 defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional }
             );
         }

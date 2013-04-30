@@ -1,7 +1,11 @@
-﻿@model dynamic
+﻿@model Web.Models.Post
 
 @{
     ViewBag.Title = "title";
 }
 
-<h2>title</h2>
+<h2>@ViewBag.Title</h2>
+
+<article>
+    @Html.Raw(Model.Body)
+</article>
