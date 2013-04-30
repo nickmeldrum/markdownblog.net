@@ -117,7 +117,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <None Include="Pages\Home.markdown" />
+    <Content Include="Pages\blog\test blog post.markdown" />
+    <Content Include="Pages\cv.markdown" />
+    <Content Include="Pages\blog\home.markdown" />
+    <None Include="Pages\home.markdown" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Views\Page\Index.cshtml" />
