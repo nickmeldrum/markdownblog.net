@@ -1,11 +1,12 @@
-﻿@model MarkdownBlog.Net.Web.Models.Post
+﻿
+@model MarkdownBlog.Net.Web.Models.Post
 
 @{
     ViewBag.Title = "title";
 }
 
 <h2>@ViewBag.Title</h2>
-
+Post:<br />
 <article>
     @Html.Raw(Model.Body)
 </article>

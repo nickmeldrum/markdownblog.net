@@ -113,19 +113,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <None Include="Pages\blog\test blog post.md" />
-    <None Include="Pages\cv.md" />
-    <None Include="Pages\blog\home.md" />
-    <None Include="Pages\home.md" />
+    <Content Include="Posts\test blog post 2.md" />
+    <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Posts\metadata.json" />
+    <Content Include="Views\Blog\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

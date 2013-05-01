@@ -7,10 +7,15 @@ namespace MarkdownBlog.Net.Web.App_Start {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{*url}",
-                defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] { "MarkdownBlog.Net.Web.Controllers" }
+                "BlogPost", // Route name
+                "Blog/{postName}", // URL with parameters
+                new { controller = "Blog", action = "Post" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "Default", // Route name
+                "{controller}/{action}/{*id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
         }
     }

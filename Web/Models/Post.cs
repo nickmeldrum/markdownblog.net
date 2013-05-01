@@ -5,51 +5,37 @@ using MarkdownSharp;
 
 namespace MarkdownBlog.Net.Web.Models {
     public class Post {
-        private readonly string _pageExtension = ".md";
-        private readonly string _pagesRoot = "~/pages";
-        private readonly string _homePagename = "home";
+        private readonly string _postExtension = ".md";
+        private readonly string _postsRoot = "~/Posts/";
+        private readonly string _metadataFile = "metadata.json";
+
+        private readonly string _postName;
 
         private readonly HttpContextWrapper _httpContext;
         private string _body;
 
-        public Post(HttpContextWrapper httpContext) {
+        public Post(string postName, HttpContextWrapper httpContext)
+        {
+            _postName = postName;
             _httpContext = httpContext;
         }
+
+        private string PostBodyPath { get { return _httpContext.Server.MapPath(_postsRoot + _postName + _postExtension); } }
+        private string MetaDataFilePath { get { return _httpContext.Server.MapPath(_postsRoot + _metadataFile); } }
 
         public string Body {
             get {
                 if (string.IsNullOrWhiteSpace(_body)) {
-                    var markdown = new Markdown();
-                    using (var reader = new StreamReader(GetMarkdownPathFromUrl(_httpContext.Request.Url))) {
-                        _body = markdown.Transform(reader.ReadToEnd());
+
+                    if (!File.Exists(PostBodyPath))
+                        throw new Exception("404!"); // TODO: do this as a proper 404!
+
+                    using (var reader = new StreamReader(PostBodyPath)) {
+                        _body = new Markdown().Transform(reader.ReadToEnd());
                     }
                 }
                 return _body;
             }
-        }
-
-        private string GetMarkdownPathFromUrl(Uri url)
-        {
-            var pagePath = string.Empty;
-
-            if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath.TrimEnd(new[] { '/' }) + _pageExtension))) {
-                // then it's a file
-                pagePath += url.LocalPath.TrimEnd(new[] {'/'});
-            }
-            else if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath + _homePagename + _pageExtension))) {
-                // then it's a folder
-                pagePath += url.LocalPath + _homePagename;
-            }
-            else if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath + "/" + _homePagename + _pageExtension))) {
-                // then it's a folder
-                pagePath += url.LocalPath + "/" + _homePagename; 
-            }
-            else {
-                // it's a 404
-                throw new Exception("404!");
-            }
-
-            return _httpContext.Server.MapPath(string.Format("{0}{1}{2}", _pagesRoot, pagePath, _pageExtension));
         }
     }
 }
