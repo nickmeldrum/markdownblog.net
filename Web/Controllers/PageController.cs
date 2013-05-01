@@ -1,8 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using Web.Models;
+using MarkdownBlog.Net.Web.Models;
 
-namespace Web.Controllers {
+namespace MarkdownBlog.Net.Web.Controllers {
     public class PageController : Controller {
         public ActionResult Index()
         {

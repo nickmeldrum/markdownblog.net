@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Web {
+namespace MarkdownBlog.Net.Web.App_Start {
     public class RouteConfig {
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -9,7 +9,8 @@ namespace Web {
             routes.MapRoute(
                 name: "Default",
                 url: "{*url}",
-                defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MarkdownBlog.Net.Web.Controllers" }
             );
         }
     }

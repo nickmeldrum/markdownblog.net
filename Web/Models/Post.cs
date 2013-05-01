@@ -3,7 +3,7 @@ using System.IO;
 using System.Web;
 using MarkdownSharp;
 
-namespace Web.Models {
+namespace MarkdownBlog.Net.Web.Models {
     public class Post {
         private readonly HttpContextWrapper _httpContext;
         private string _body;

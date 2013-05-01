@@ -1,8 +1,9 @@
 ﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-            
-namespace Web {
+using MarkdownBlog.Net.Web.App_Start;
+
+namespace MarkdownBlog.Net.Web {
     public class MvcApplication : System.Web.HttpApplication {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
