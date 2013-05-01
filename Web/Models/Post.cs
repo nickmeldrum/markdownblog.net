@@ -5,6 +5,10 @@ using MarkdownSharp;
 
 namespace MarkdownBlog.Net.Web.Models {
     public class Post {
+        private readonly string _pageExtension = ".md";
+        private readonly string _pagesRoot = "~/pages";
+        private readonly string _homePagename = "home";
+
         private readonly HttpContextWrapper _httpContext;
         private string _body;
 
@@ -24,29 +28,28 @@ namespace MarkdownBlog.Net.Web.Models {
             }
         }
 
-        private string GetMarkdownPathFromUrl(Uri url) {
-            var markdownPath = "~/pages";
+        private string GetMarkdownPathFromUrl(Uri url)
+        {
+            var pagePath = string.Empty;
 
-            if (File.Exists(_httpContext.Server.MapPath("~/pages" + url.LocalPath.TrimEnd(new[] { '/' }) + ".markdown"))) {
+            if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath.TrimEnd(new[] { '/' }) + _pageExtension))) {
                 // then it's a file
-                markdownPath += url.LocalPath.TrimEnd(new[] {'/'});
+                pagePath += url.LocalPath.TrimEnd(new[] {'/'});
             }
-            else if (File.Exists(_httpContext.Server.MapPath("~/pages" + url.LocalPath + "home.markdown"))) {
+            else if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath + _homePagename + _pageExtension))) {
                 // then it's a folder
-                markdownPath += url.LocalPath + "home";
+                pagePath += url.LocalPath + _homePagename;
             }
-            else if (File.Exists(_httpContext.Server.MapPath("~/pages" + url.LocalPath + "/home.markdown"))) {
+            else if (File.Exists(_httpContext.Server.MapPath(_pagesRoot + url.LocalPath + "/" + _homePagename + _pageExtension))) {
                 // then it's a folder
-                markdownPath += url.LocalPath + "/home";
+                pagePath += url.LocalPath + "/" + _homePagename; 
             }
             else {
                 // it's a 404
                 throw new Exception("404!");
             }
 
-            markdownPath = markdownPath + ".markdown";
-
-            return _httpContext.Server.MapPath(markdownPath);
+            return _httpContext.Server.MapPath(string.Format("{0}{1}{2}", _pagesRoot, pagePath, _pageExtension));
         }
     }
 }
