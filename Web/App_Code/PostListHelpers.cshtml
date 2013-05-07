@@ -1,0 +1,16 @@
+@using MarkdownBlog.Net.Web.Models
+
+@helper RenderPostList(IList<PostMetadata> posts)
+{
+    <ul>
+    
+        @foreach (var postData in posts.OrderByDescending(p => p.PublishDate))
+        {
+            <li>
+                <a href="/blog/@postData.Title">@postData.Title - <i>Posted @postData.PublishDate by @postData.Author</i></a>
+                <br />
+                <p>@postData.ShortDescription</p>
+            </li>
+        }
+    </ul>
+}

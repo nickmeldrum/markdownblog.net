@@ -3,8 +3,6 @@ TODO:
 
   * setup latest post listings
   * setup archive post listings
-  * join post and postdata classes?
-  * get metadata in post itself?
   * setup caching for post listings?
   * Setup disqus commenting
   * setup page? caching for posts

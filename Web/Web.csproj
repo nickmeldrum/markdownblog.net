@@ -144,6 +144,7 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Posts\test blog post 2.md" />
+    <Content Include="App_Code\Index.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Post.cs" />

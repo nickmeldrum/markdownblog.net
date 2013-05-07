@@ -1,4 +1,5 @@
 ﻿@model MarkdownBlog.Net.Web.Models.Posts
+
 @{
     ViewBag.Title = "title";
 }
@@ -6,12 +7,4 @@
 <h2>Blog index</h2>
 
 <h3>Posts:</h3>
-<ul>
-    @foreach (var postData in Model.List.OrderByDescending(p => p.PublishDate)) {
-        <li>
-            <a href="/blog/@postData.Title">@postData.Title - <i>Posted @postData.PublishDate by @postData.Author</i></a>
-            <br />
-            <p>@postData.ShortDescription</p>
-        </li>
-    }
-</ul>
+@PostListHelpers.RenderPostList(Model.List)
