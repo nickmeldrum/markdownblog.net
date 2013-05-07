@@ -1,7 +1,7 @@
 TODO:
 =====
 
-  * setup archive post listings
+  * setup archive post listing pages
   * setup caching for post listings?
   * Setup disqus commenting
   * setup page? caching for posts
@@ -9,3 +9,5 @@ TODO:
   * RSS feed
   * microformats?
   * Proper 404 when not finding the .md file
+  * add gravatar plugin
+  * add twitter plugin

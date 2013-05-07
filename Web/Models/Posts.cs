@@ -9,8 +9,15 @@ namespace MarkdownBlog.Net.Web.Models {
     public class Posts {
         public static readonly string PostsRoot = "~/Posts/";
 
-        public List<PostMetadata> List { get; set; }
+        public IList<PostMetadata> List { get; set; }
         public PostMetadata Latest { get { return List.OrderByDescending(p => p.PublishDate).Take(1).Single(); } }
+
+        public IList<ArchiveItemGrouping> MonthlyArchiveLinks {
+            get {
+            return List.GroupBy(p => new ArchiveItem(p))
+                .Select(ps => new ArchiveItemGrouping{ ArchiveItem = ps.Key, Count = ps.Count()})
+            .ToList();
+        }}
 
         private readonly string _metadataFile = "metadata.json";
         private readonly HttpContextWrapper _httpContext;
