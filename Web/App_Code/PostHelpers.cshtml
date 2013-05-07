@@ -1,5 +1,18 @@
 @using MarkdownBlog.Net.Web.Models
 
+@functions {
+    public class ArchiveItem
+    {
+        public int Year { get; set; }
+        public string Month { get; set; }
+        public ArchiveItem(PostMetadata postMetadata)
+        {
+            Year = postMetadata.PublishDate.Year;
+            Month = postMetadata.PublishDate.ToString("MMM");
+        }
+    }
+}
+
 @helper RenderPostList(IList<PostMetadata> posts) {
     <ul>
 
@@ -7,6 +20,15 @@
             <li>
                 @RenderPost(postMetadata)
             </li>
+        }
+    </ul>
+}
+
+@helper RenderMonthlyArchiveLinks(IList<PostMetadata> posts) {
+    <ul>
+        @foreach (var month in posts.GroupBy(p => new ArchiveItem(p)).Select(ps => new {Archive = ps.Key, Count = ps.Count()}))
+        {
+            <li><a href="/blog/archive/@month.Archive.Month/@month.Archive.Year">@month.Archive.Month @month.Archive.Year (@month.Count)</a></li>
         }
     </ul>
 }

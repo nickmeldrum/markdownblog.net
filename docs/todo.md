@@ -1,7 +1,6 @@
 TODO:
 =====
 
-  * setup latest post listings
   * setup archive post listings
   * setup caching for post listings?
   * Setup disqus commenting
