@@ -11,7 +11,7 @@ namespace MarkdownBlog.Net.Web {
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BootstrapSupport.BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
+            BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             BlogRouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BootstrapSupport
+namespace MarkdownBlog.Net.Web.BootstrapSupport
 {
     public class ControlGroup : IDisposable
     {

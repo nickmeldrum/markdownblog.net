@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using BootstrapSupport;
+using MarkdownBlog.Net.Web.BootstrapSupport;
 
-namespace BootstrapMvcSample.Controllers
+namespace MarkdownBlog.Net.Web.Controllers
 {
     public class BootstrapBaseController: Controller
     {

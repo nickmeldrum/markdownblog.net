@@ -1,6 +1,6 @@
-﻿using System;
-using System.Web.Routing;
-namespace NavigationRoutes
+﻿using System.Web.Routing;
+
+namespace MarkdownBlog.Net.Web.NavigationRoutes
 {
     public interface INavigationRouteFilter
     {

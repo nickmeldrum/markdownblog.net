@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace NavigationRoutes
+namespace MarkdownBlog.Net.Web.NavigationRoutes
 {
     public class NamedRoute : Route
     {

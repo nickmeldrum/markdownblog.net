@@ -1,5 +1,5 @@
 ﻿using MarkdownBlog.Net.Web.Controllers;
-using NavigationRoutes;
+using MarkdownBlog.Net.Web.NavigationRoutes;
 using System.Web.Routing;
 
 namespace MarkdownBlog.Net.Web.App_Start

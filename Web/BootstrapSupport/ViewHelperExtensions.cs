@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 
-namespace BootstrapSupport
+namespace MarkdownBlog.Net.Web.BootstrapSupport
 {
     public static class DefaultScaffoldingExtensions
     {

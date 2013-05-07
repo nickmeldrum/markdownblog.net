@@ -1,14 +1,12 @@
-﻿using Microsoft.Web.Mvc; //nuget:mvc4futures
+﻿using Microsoft.Web.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using System.Web.Routing;
+//nuget:mvc4futures
 
-namespace NavigationRoutes
+namespace MarkdownBlog.Net.Web.NavigationRoutes
 {
     public static class NavigationRouteConfigurationExtensions
     {
