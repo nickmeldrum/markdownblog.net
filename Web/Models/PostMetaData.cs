@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace MarkdownBlog.Net.Web.Models
+{
+    public class PostMetaData
+    {
+        public string Title { get; set; }
+        public DateTime PublishDate { get; set; }
+        public string Author { get; set; }
+        public string ShortDescription { get; set; }
+    }
+}

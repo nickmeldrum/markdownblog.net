@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using Newtonsoft.Json;
@@ -9,7 +8,7 @@ namespace MarkdownBlog.Net.Web.Models {
     public class Posts {
         public static readonly string PostsRoot = "~/Posts/";
 
-        public List<PostData> List { get; set; }
+        public List<PostMetaData> List { get; set; }
 
         private readonly string _metadataFile = "metadata.json";
         private readonly HttpContextWrapper _httpContext;
@@ -20,18 +19,10 @@ namespace MarkdownBlog.Net.Web.Models {
 
             using (var reader = new StreamReader(MetaDataFilePath))
             {
-                List = JsonConvert.DeserializeObject<List<PostData>>(reader.ReadToEnd(), new IsoDateTimeConverter());
+                List = JsonConvert.DeserializeObject<List<PostMetaData>>(reader.ReadToEnd(), new IsoDateTimeConverter());
             }
         }
 
         private string MetaDataFilePath { get { return _httpContext.Server.MapPath(PostsRoot + _metadataFile); } }
-    }
-
-    public class PostData
-    {
-        public string Title { get; set; }
-        public DateTime PublishDate { get; set; }
-        public string Author { get; set; }
-        public string ShortDescription { get; set; }
     }
 }
