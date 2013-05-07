@@ -1,14 +1,14 @@
 ﻿[
 	{
 		"Title" : "test blog post",
-		"PublishDate" : "20130501",
+		"PublishDate" : "2013-05-01T09:32:00Z",
 		"Author" : "Nick Meldrum",
-		"Short description" : "This is the short desc for test blog post"
+		"ShortDescription" : "This is the short desc for test blog post"
 	},
 	{
 		"Title" : "test blog post 2",
-		"PublishDate" : "20130502",
+		"PublishDate" : "2009-02-15T00:00:00Z",
 		"Author" : "Nick Meldrum",
-		"Short description" : "This is the short desc for test blog post 2"
+		"ShortDescription" : "This is the short desc for test blog post 2"
 	}
 ]

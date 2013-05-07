@@ -6,8 +6,6 @@ using MarkdownSharp;
 namespace MarkdownBlog.Net.Web.Models {
     public class Post {
         private readonly string _postExtension = ".md";
-        private readonly string _postsRoot = "~/Posts/";
-        private readonly string _metadataFile = "metadata.json";
 
         private readonly string _postName;
 
@@ -20,8 +18,7 @@ namespace MarkdownBlog.Net.Web.Models {
             _httpContext = httpContext;
         }
 
-        private string PostBodyPath { get { return _httpContext.Server.MapPath(_postsRoot + _postName + _postExtension); } }
-        private string MetaDataFilePath { get { return _httpContext.Server.MapPath(_postsRoot + _metadataFile); } }
+        private string PostBodyPath { get { return _httpContext.Server.MapPath(Posts.PostsRoot + _postName + _postExtension); } }
 
         public string Body {
             get {
