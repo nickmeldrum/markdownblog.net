@@ -1,7 +1,7 @@
-﻿@{
-    ViewBag.Title = "Blog Home";
-}
+﻿@model MarkdownBlog.Net.Web.Models.Home
+
+@{ ViewBag.Title = "Blog Home"; }
 
 <h2>Home</h2>
 
-Blog posts:<br />
+Latest Post: @PostHelpers.RenderPost(Model.Posts.Latest)

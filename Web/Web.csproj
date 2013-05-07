@@ -130,6 +130,7 @@
     <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\BlogControllerBase.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,7 +145,7 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Posts\test blog post 2.md" />
-    <Content Include="App_Code\Index.cshtml" />
+    <Content Include="App_Code\PostHelpers.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Post.cs" />
