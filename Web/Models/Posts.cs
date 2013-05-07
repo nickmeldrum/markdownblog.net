@@ -8,7 +8,7 @@ namespace MarkdownBlog.Net.Web.Models {
     public class Posts {
         public static readonly string PostsRoot = "~/Posts/";
 
-        public List<PostMetaData> List { get; set; }
+        public List<PostMetadata> List { get; set; }
 
         private readonly string _metadataFile = "metadata.json";
         private readonly HttpContextWrapper _httpContext;
@@ -19,7 +19,7 @@ namespace MarkdownBlog.Net.Web.Models {
 
             using (var reader = new StreamReader(MetaDataFilePath))
             {
-                List = JsonConvert.DeserializeObject<List<PostMetaData>>(reader.ReadToEnd(), new IsoDateTimeConverter());
+                List = JsonConvert.DeserializeObject<List<PostMetadata>>(reader.ReadToEnd(), new IsoDateTimeConverter());
             }
         }
 

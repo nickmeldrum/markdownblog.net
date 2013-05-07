@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web;
 using MarkdownSharp;
 
@@ -11,11 +12,14 @@ namespace MarkdownBlog.Net.Web.Models {
 
         private readonly HttpContextWrapper _httpContext;
         private string _body;
+        public PostMetadata Metadata { get; private set; }
 
         public Post(string postName, HttpContextWrapper httpContext)
         {
             _postName = postName;
             _httpContext = httpContext;
+
+            Metadata = new Posts(_httpContext).List.Single(p => p.Title == _postName);
         }
 
         private string PostBodyPath { get { return _httpContext.Server.MapPath(Posts.PostsRoot + _postName + _postExtension); } }

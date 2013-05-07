@@ -1,11 +1,11 @@
 ﻿@model MarkdownBlog.Net.Web.Models.Post
 
-@{
-    ViewBag.Title = "title";
-}
+@{ViewBag.Title = Model.Metadata.Title;}
 
-<h2>@ViewBag.Title</h2>
-Post:<br />
+<h2>@Model.Metadata.Title</h2>
+
+<i>Posted by @Model.Metadata.Author on @Model.Metadata.PublishDate</i>
+
 <article>
     @Html.Raw(Model.Body)
 </article>
