@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Web;
+using MarkdownBlog.Net.Web.Controllers;
 using MarkdownSharp;
 
 namespace MarkdownBlog.Net.Web.Models {
@@ -23,8 +24,7 @@ namespace MarkdownBlog.Net.Web.Models {
 
             if (!File.Exists(PostBodyPath) || !posts.List.Any(p => p.Title == _postName))
             {
-                httpContext.Response.StatusCode = 404;
-                httpContext.Response.End();
+                throw new FileNotFoundException();
             }
 
             Metadata = posts.List.Single(p => p.Title == _postName);

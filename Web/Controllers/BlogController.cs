@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.ServiceModel.Syndication;
 using System.Web;
 using System.Web.Mvc;
@@ -11,10 +12,20 @@ namespace MarkdownBlog.Net.Web.Controllers {
             return View(new Posts(HttpContextWrapper));
         }
 
-        public ActionResult Post(string postName) {
-            return string.IsNullOrWhiteSpace(postName)
-                ? View("Index")
-                : View("Post", new Post(postName, HttpContextWrapper));
+        public ActionResult Post(string postName)
+        {
+            try
+            {
+                return string.IsNullOrWhiteSpace(postName)
+                    ? View("Index")
+                    : View("Post", new Post(postName, HttpContextWrapper));
+            }
+            catch (FileNotFoundException ex)
+            {
+                HttpContextWrapper.SendHttpStatusResponse(404);
+            }
+
+            return View("Index");
         }
 
         public ActionResult Archive(Archive archive) {
@@ -26,7 +37,7 @@ namespace MarkdownBlog.Net.Web.Controllers {
             var feedType = FeedType.unknown;
 
             if (!Enum.TryParse(type.ToLower(), out feedType)) {
-                SendHttpStatusResponse(404);
+                HttpContextWrapper.SendHttpStatusResponse(404);
             }
 
             var feed = new SyndicationFeed {
