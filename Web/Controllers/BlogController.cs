@@ -13,5 +13,11 @@ namespace MarkdownBlog.Net.Web.Controllers {
                 ? View("Index")
                 : View("Post", new Post(postName, HttpContextWrapper));
         }
+
+        public ActionResult Archive(Archive archive)
+        {
+            archive.GetPosts(HttpContextWrapper);
+            return View(archive);
+        }
     }
 }

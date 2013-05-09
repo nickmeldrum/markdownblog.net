@@ -147,6 +147,7 @@
     <Content Include="Posts\test blog post 2.md" />
     <Content Include="App_Code\PostHelpers.cshtml" />
     <None Include="Posts\test blog post.md" />
+    <Compile Include="Models\Archive.cs" />
     <Compile Include="Models\ArchiveItem.cs" />
     <Compile Include="Models\ArchiveItemGrouping.cs" />
     <Compile Include="Models\Home.cs" />
@@ -191,6 +192,7 @@
     <Content Include="Views\Shared\_BootstrapLayout.basic.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Blog\Archive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

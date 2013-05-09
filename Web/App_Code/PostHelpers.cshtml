@@ -1,26 +1,30 @@
 @using MarkdownBlog.Net.Web.Models
 
-@helper RenderPostList(IList<PostMetadata> posts) {
+@helper RenderPostList(IEnumerable<PostMetadata> posts) {
+    if (posts != null) {
     <ul>
-
         @foreach (var postMetadata in posts.OrderByDescending(p => p.PublishDate)) {
             <li>
                 @RenderPost(postMetadata)
             </li>
         }
     </ul>
+    }
 }
 
-@helper RenderMonthlyArchiveLinks(IList<ArchiveItemGrouping> archiveItemGrouping) {
+@helper RenderMonthlyArchiveLinks(IEnumerable<ArchiveItemGrouping> archiveItemGrouping) {
+    if (archiveItemGrouping != null) {
     <ul>
-        @foreach (var month in archiveItemGrouping)
-        {
+        @foreach (var month in archiveItemGrouping) {
             <li><a href="/blog/archive/@month.ArchiveItem.Month/@month.ArchiveItem.Year">@month.ArchiveItem.Month @month.ArchiveItem.Year (@month.Count)</a></li>
         }
     </ul>
+    }
 }
 
 @helper RenderPost(PostMetadata postMetadata) {
+    if (postMetadata != null) {
     <a href="/blog/@postMetadata.Title">@postMetadata.Title - <i>Posted @postMetadata.PublishDate by @postMetadata.Author</i></a>
-    <p>@postMetadata.ShortDescription</p>    
+    <p>@postMetadata.ShortDescription</p>           
+    }
 }
