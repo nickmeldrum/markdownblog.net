@@ -19,7 +19,15 @@ namespace MarkdownBlog.Net.Web.Models {
             _postName = postName;
             _httpContext = httpContext;
 
-            Metadata = new Posts(_httpContext).List.Single(p => p.Title == _postName);
+            var posts = new Posts(_httpContext);
+
+            if (!File.Exists(PostBodyPath) || !posts.List.Any(p => p.Title == _postName))
+            {
+                httpContext.Response.StatusCode = 404;
+                httpContext.Response.End();
+            }
+
+            Metadata = posts.List.Single(p => p.Title == _postName);
         }
 
         private string PostBodyPath { get { return _httpContext.Server.MapPath(Posts.PostsRoot + _postName + _postExtension); } }
