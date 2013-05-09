@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using System.Web;
+using MarkdownBlog.Net.Web.Controllers;
 
 namespace MarkdownBlog.Net.Web.Models {
     public class Feed {
@@ -36,7 +37,7 @@ namespace MarkdownBlog.Net.Web.Models {
                 Language = "en-gb"
             };
 
-            _feed.Links.Add(SyndicationLink.CreateAlternateLink(Site.GetAbsoluteUrl("~/blog")));
+            _feed.Links.Add(SyndicationLink.CreateAlternateLink(_contextWrapper.GetAbsoluteUrl("~/blog")));
             _feed.Links.Add(SyndicationLink.CreateSelfLink(new Uri(_contextWrapper.Request.Url.AbsoluteUri)));
         }
 
@@ -50,7 +51,7 @@ namespace MarkdownBlog.Net.Web.Models {
                     PublishDate = post.PublishDate,
                     LastUpdatedTime = post.PublishDate
                 };
-                item.Links.Add(SyndicationLink.CreateSelfLink(Site.GetAbsoluteUrl("~/blog/" + post.Title)));
+                item.Links.Add(SyndicationLink.CreateSelfLink(_contextWrapper.GetAbsoluteUrl("~/blog/" + post.Title)));
                 item.Authors.Add(new SyndicationPerson { Name = post.Author });
 
                 feedItems.Add(item);

@@ -1,6 +1,7 @@
 TODO:
 =====
 
+  * add Sitesettings.config for all the blog owner settings - and load into Site.cs
   * add search
   * add tagging
   * add ability to add "pages" using md as well as blog posts

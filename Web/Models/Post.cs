@@ -41,5 +41,10 @@ namespace MarkdownBlog.Net.Web.Models {
                 return _body;
             }
         }
+
+        public Disqus Disqus
+        {
+            get { return new Disqus {ForumShortName = SiteData.DisqusShortName, PageIdentifier = Metadata.Title}; }
+        }
     }
 }

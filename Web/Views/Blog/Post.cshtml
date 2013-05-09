@@ -9,4 +9,4 @@
     @Html.Raw(Model.Body)
 </article>
 
-@Disqus.ShowComments(Model.Metadata.Title)
+@Html.Partial("Disqus", Model.Disqus)

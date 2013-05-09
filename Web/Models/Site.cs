@@ -9,23 +9,9 @@ namespace MarkdownBlog.Net.Web.Models {
         public string Description { get { return "Blog Description"; } }
         public string Owner { get { return "Blog Owner"; } }
 
+        public string DisqusShortName { get { return "ForumShortName"; } }
+
         private Site() {
-        }
-
-        public static string ResolveServerUrl(string serverUrl, bool forceHttps) {
-            if (serverUrl.IndexOf("://", StringComparison.Ordinal) > -1)
-                return serverUrl;
-
-            var newUrl = serverUrl;
-            var originalUri = HttpContext.Current.Request.Url;
-            newUrl = (forceHttps ? "https" : originalUri.Scheme) + "://" + originalUri.Authority + newUrl;
-
-            return newUrl;
-        } 
-
-        public static Uri GetAbsoluteUrl(string virtualUrl)
-        {
-            return new Uri(ResolveServerUrl(VirtualPathUtility.ToAbsolute(virtualUrl), false));
         }
     }
 }

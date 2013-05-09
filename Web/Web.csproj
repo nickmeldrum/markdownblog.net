@@ -153,7 +153,7 @@
     <Content Include="errors\404.html" />
     <Content Include="errors\500.html" />
     <Content Include="Posts\test blog post 2.md" />
-    <Content Include="App_Code\Disqus.cshtml" />
+    <Content Include="Views\Blog\Disqus.cshtml" />
     <Content Include="App_Code\Asides.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Archive.cs" />

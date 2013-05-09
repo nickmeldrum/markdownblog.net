@@ -14,8 +14,6 @@ namespace MarkdownBlog.Net.Web {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             BlogRouteConfig.RegisterRoutes(RouteTable.Routes);
-
-            Disqus.Initialize("forumShortName");
         }
     }
 }
