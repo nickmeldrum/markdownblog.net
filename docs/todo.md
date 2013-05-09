@@ -1,7 +1,6 @@
 TODO:
 =====
 
-  * setup archive post listing pages
   * setup caching for post listings?
   * Setup disqus commenting
   * setup page? caching for posts
