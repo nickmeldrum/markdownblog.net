@@ -1,0 +1,10 @@
+﻿@model MarkdownBlog.Net.Web.Models.StackOverflowFlair
+@if (Model != null)
+{
+    <h3>Stack Overflow Flair</h3>
+    
+    <a href="http://stackoverflow.com/users/@Model.Id/@Model.UserName">
+        <img src="http://stackoverflow.com/users/flair/@(Model.Id).png" width="208" height="58" alt="profile for @Model.DisplayName at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for @Model.DisplayName at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+    </a>    
+    <hr />
+}

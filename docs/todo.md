@@ -1,6 +1,7 @@
 TODO:
 =====
 
+  * add rss button
   * add Sitesettings.config for all the blog owner settings - and load into Site.cs
   * add search
   * add tagging
@@ -9,7 +10,7 @@ TODO:
   * RSS feed bug: not passing through the content type - iis issue?
   * microformats?
   * add gravatar plugin
-  * add twitter plugin
+  * make twitter plugin work off site settings
   * add some nicer styling - bootstrap theme?
   * add sitemap + ga
   * setup caching for post listings?

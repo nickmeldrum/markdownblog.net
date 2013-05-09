@@ -153,7 +153,7 @@
     <Content Include="errors\404.html" />
     <Content Include="errors\500.html" />
     <Content Include="Posts\test blog post 2.md" />
-    <Content Include="Views\Blog\Disqus.cshtml" />
+    <Content Include="Views\Shared\Disqus.cshtml" />
     <Content Include="App_Code\Asides.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Archive.cs" />
@@ -168,6 +168,7 @@
     <Compile Include="Models\Posts.cs" />
     <Compile Include="Models\Site.cs" />
     <Compile Include="Models\SiteViewModel.cs" />
+    <Compile Include="Models\StackOverflowFlair.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
     <Compile Include="NavigationRoutes\NamedRoute.cs" />
     <Compile Include="NavigationRoutes\NavigationExtensions.cs" />
@@ -210,6 +211,8 @@
     <Content Include="Views\Shared\ArchiveLinks.cshtml" />
     <Content Include="Views\Shared\Posts.cshtml" />
     <Content Include="Views\Shared\PostLink.cshtml" />
+    <Content Include="Views\Shared\Asides.cshtml" />
+    <Content Include="Views\Shared\StackOverflowFlair.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

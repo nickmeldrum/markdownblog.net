@@ -1,7 +1,4 @@
-﻿using System;
-using System.Web;
-
-namespace MarkdownBlog.Net.Web.Models {
+﻿namespace MarkdownBlog.Net.Web.Models {
     public class Site {
         public static readonly Site SiteData = new Site();
 
@@ -10,6 +7,16 @@ namespace MarkdownBlog.Net.Web.Models {
         public string Owner { get { return "Blog Owner"; } }
 
         public string DisqusShortName { get { return "ForumShortName"; } }
+
+        public StackOverflowFlair StackOverflowFlair {
+            get {
+                return new StackOverflowFlair {
+                    Id = 32739,
+                    UserName = "nick-meldrum",
+                    DisplayName = "Nick Meldrum"
+                };
+            }
+        }
 
         private Site() {
         }
