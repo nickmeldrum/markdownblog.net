@@ -6,28 +6,24 @@ using System.Web.Mvc;
 namespace MarkdownBlog.Net.Web.Controllers {
     public class BlogController : BlogControllerBase {
         public ActionResult Index() {
-            return View(new Posts(HttpContextWrapper));
+            return View(new SiteViewModel(HttpContextWrapper));
         }
 
-        public ActionResult Post(string postName)
-        {
-            try
-            {
+        public ActionResult Post(string postName) {
+            try {
                 return string.IsNullOrWhiteSpace(postName)
                     ? View("Index")
                     : View("Post", new Post(postName, HttpContextWrapper));
             }
-            catch (FileNotFoundException ex)
-            {
+            catch (FileNotFoundException ex) {
                 HttpContextWrapper.SendHttpStatusResponse(404);
             }
 
             return View("Index");
         }
 
-        public ActionResult Archive(Archive archive) {
-            archive.GetPosts(HttpContextWrapper);
-            return View(archive);
+        public ActionResult Archive(string month, int year) {
+            return View(new Archive(HttpContextWrapper) { Month = month, Year = year });
         }
 
         public ActionResult Feed(string type) {

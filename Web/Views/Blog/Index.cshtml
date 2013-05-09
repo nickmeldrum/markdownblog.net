@@ -1,4 +1,4 @@
-﻿@model MarkdownBlog.Net.Web.Models.Posts
+﻿@model MarkdownBlog.Net.Web.Models.SiteViewModel
 
 @{
     ViewBag.Title = "Posts";
@@ -7,8 +7,8 @@
 <h2>Blog index</h2>
 
 <h3>Posts:</h3>
-@PostHelpers.RenderPostList(Model.List)
+@PostHelpers.RenderPostList(Model.Posts.List)
 
 
 <h3>archive:</h3>
-@PostHelpers.RenderMonthlyArchiveLinks(Model.MonthlyArchiveLinks)
+@PostHelpers.RenderMonthlyArchiveLinks(Model.Posts.MonthlyArchiveLinks)
