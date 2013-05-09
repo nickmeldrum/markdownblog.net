@@ -31,9 +31,21 @@
             </div>
         </div>        
         <div class="container">
+            <aside>
+                @if (IsSectionDefined("asides"))
+                {
+                    @RenderSection("asides")
+                }
+                else
+                {
+                    @Asides.ArchiveAside();
+                    @Asides.TwitterTimelineAside("@nick_meldrum/moneyvista-people", "https://twitter.com/nick_meldrum/moneyvista-people", "332522742777778176");
+                }
+            </aside> 
+
             @Html.Partial("_alerts")
             @Html.Partial("_validationSummary")
-            @RenderBody()   
+            @RenderBody()  
             <hr>
             <footer>
                 <p>&copy; @Site.SiteData.Owner @System.DateTime.Now.ToString("yyyy")</p>

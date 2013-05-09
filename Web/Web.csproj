@@ -155,11 +155,13 @@
     <Content Include="Posts\test blog post 2.md" />
     <Content Include="App_Code\PostHelpers.cshtml" />
     <Content Include="App_Code\Disqus.cshtml" />
+    <Content Include="App_Code\Asides.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Archive.cs" />
     <Compile Include="Models\ArchiveItem.cs" />
     <Compile Include="Models\ArchiveItemGrouping.cs" />
     <Compile Include="Models\Disqus.cs" />
+    <Compile Include="Models\Feed.cs" />
     <Compile Include="Models\FeedResult.cs" />
     <Compile Include="Models\FeedType.cs" />
     <Compile Include="Models\Home.cs" />
