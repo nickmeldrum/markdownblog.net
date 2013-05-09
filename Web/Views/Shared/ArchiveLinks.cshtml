@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<MarkdownBlog.Net.Web.Models.ArchiveItemGrouping>
 
 @if (Model != null) {
+    <h3>Archive</h3>
     <ul>
         @foreach (var month in Model) {
             <li><a href="/blog/archive/@month.ArchiveItem.Month/@month.ArchiveItem.Year">@month.ArchiveItem.Month @month.ArchiveItem.Year (@month.Count)</a></li>
         }
     </ul>
+    <hr />
 }

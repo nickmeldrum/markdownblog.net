@@ -6,3 +6,8 @@
 <h3>Posts for @Model.Month @Model.Year:</h3>
 
 @Html.Partial("Posts", Model.ArchivePosts)
+
+@section asides
+{
+    @Html.Partial("Asides", Model)
+}
