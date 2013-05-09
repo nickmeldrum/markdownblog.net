@@ -1,10 +1,11 @@
 @using System.Web.Optimization
+@using MarkdownBlog.Net.Web.Models
 @using MarkdownBlog.Net.Web.NavigationRoutes
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>@ViewBag.Title</title>
+        <title>@ViewBag.Title - @Site.SiteData.Name</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="@Styles.Url("~/content/css")" rel="stylesheet"/>
         @RenderSection("head", required: false)
@@ -20,7 +21,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#" title="change in _bootstrapLayout.basic.cshtml">Blog</a>
+                    <a class="brand" href="/" title="@Site.SiteData.Name">@Site.SiteData.Name</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             @Html.Navigation()

@@ -8,8 +8,8 @@ namespace MarkdownBlog.Net.Web.App_Start {
 
             routes.MapRoute(
                 "BlogFeed", // Route name
-                "blog/feed", // URL with parameters
-                new { controller = "Blog", action = "Feed" } // Parameter defaults
+                "blog/feed/{*type}", // URL with parameters
+                new { controller = "Blog", action = "Feed", type = "Atom"  } // Parameter defaults
             );
 
             routes.MapRoute(
