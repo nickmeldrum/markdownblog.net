@@ -147,6 +147,7 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="errors\404.html" />
+    <Content Include="errors\500.html" />
     <Content Include="Posts\test blog post 2.md" />
     <Content Include="App_Code\PostHelpers.cshtml" />
     <Content Include="App_Code\Disqus.cshtml" />
