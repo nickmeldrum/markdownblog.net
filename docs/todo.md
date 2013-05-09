@@ -1,7 +1,7 @@
 TODO:
 =====
 
-  * RSS feed
+  * RSS feed bug: not passing through the content type - iis issue?
   * microformats?
   * add gravatar plugin
   * add twitter plugin
