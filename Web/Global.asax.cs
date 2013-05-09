@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using MarkdownBlog.Net.Web.App_Start;
+using MarkdownBlog.Net.Web.Models;
 
 namespace MarkdownBlog.Net.Web {
     public class MvcApplication : System.Web.HttpApplication {
@@ -13,6 +14,8 @@ namespace MarkdownBlog.Net.Web {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             BlogRouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            Disqus.Initialize("{forumShortName}");
         }
     }
 }

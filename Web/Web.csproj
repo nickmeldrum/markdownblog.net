@@ -146,10 +146,12 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Posts\test blog post 2.md" />
     <Content Include="App_Code\PostHelpers.cshtml" />
+    <Content Include="App_Code\Disqus.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Archive.cs" />
     <Compile Include="Models\ArchiveItem.cs" />
     <Compile Include="Models\ArchiveItemGrouping.cs" />
+    <Compile Include="Models\Disqus.cs" />
     <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostMetaData.cs" />
