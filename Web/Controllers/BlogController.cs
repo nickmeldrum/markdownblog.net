@@ -19,5 +19,10 @@ namespace MarkdownBlog.Net.Web.Controllers {
             archive.GetPosts(HttpContextWrapper);
             return View(archive);
         }
+
+        public ActionResult Feed()
+        {
+            return View(new Posts(HttpContextWrapper));
+        }
     }
 }

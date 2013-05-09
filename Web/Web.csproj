@@ -195,6 +195,7 @@
     <Content Include="Views\Shared\_alerts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Blog\Archive.cshtml" />
+    <Content Include="Views\Blog\Feed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

@@ -7,6 +7,12 @@ namespace MarkdownBlog.Net.Web.App_Start {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "BlogFeed", // Route name
+                "blog/feed", // URL with parameters
+                new { controller = "Blog", action = "Feed" } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "BlogArchive", // Route name
                 "blog/archive/{month}/{year}", // URL with parameters
                 new { controller = "Blog", action = "Archive" } // Parameter defaults
