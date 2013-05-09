@@ -1,4 +1,5 @@
 @using System.Web.Optimization
+@using MarkdownBlog.Net.Web.Models
 @using MarkdownBlog.Net.Web.NavigationRoutes
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +70,7 @@
         @RenderBody()
         <hr>
         <footer>
-            <p>&copy; Author @System.DateTime.Now.ToString("yyyy")</p>
+            <p>&copy; @Site.SiteData.Owner @System.DateTime.Now.ToString("yyyy")</p>
         </footer>
 
     </div> <!-- container -->

@@ -36,7 +36,7 @@
             @RenderBody()   
             <hr>
             <footer>
-                <p>&copy; Author @System.DateTime.Now.ToString("yyyy")</p>
+                <p>&copy; @Site.SiteData.Owner @System.DateTime.Now.ToString("yyyy")</p>
             </footer> 
         </div>
          @Scripts.Render("~/js")
