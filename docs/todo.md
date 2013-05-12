@@ -3,9 +3,7 @@ TODO:
 
   * setup github deploy/publishing
   * fork for nickmeldrum.com specific
-  * add favicon
   * add docs - how to customize, how to setup
-  * add rss button
   * add Sitesettings.config for all the blog owner settings - and load into Site.cs
   * add search
   * add tagging
