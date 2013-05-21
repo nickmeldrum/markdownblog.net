@@ -1,19 +1,19 @@
 TODO:
 =====
 
-  * setup github deploy/publishing
-  * fork for nickmeldrum.com specific
-  * add docs - how to customize, how to setup
   * add Sitesettings.config for all the blog owner settings - and load into Site.cs
-  * add search
-  * add tagging
-  * add ability to add "pages" using md as well as blog posts
-  * add blog config for user specific settings
-  * RSS feed bug: not passing through the content type - iis issue?
   * microformats?
-  * add gravatar plugin
-  * make twitter plugin work off site settings
+  * add blog config for user specific settings
+  * add gravatar plugin + author email in metadata
+  * make twitter plugin work off site settings - + twitter plugin for my latest tweets
   * add some nicer styling - bootstrap theme?
   * add sitemap + ga
+  * fork for nickmeldrum.com specific
+  * add ability to add "pages" using md as well as blog posts
+  * add search
+  * setup github deploy/publishing
+  * add docs - how to customize, how to setup
+  * add tagging
+  * RSS feed bug: not passing through the content type - iis issue?
   * setup caching for post listings?
   * setup page? caching for posts
