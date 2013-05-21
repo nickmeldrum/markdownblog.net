@@ -1,8 +1,7 @@
-﻿using System.Web.Http;
+﻿using MarkdownBlog.Net.Web.App_Start;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using MarkdownBlog.Net.Web.App_Start;
-using MarkdownBlog.Net.Web.Models;
 
 namespace MarkdownBlog.Net.Web {
     public class MvcApplication : System.Web.HttpApplication {

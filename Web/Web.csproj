@@ -216,6 +216,7 @@
     <Content Include="Views\Shared\PostLink.cshtml" />
     <Content Include="Views\Shared\Asides.cshtml" />
     <Content Include="Views\Shared\StackOverflowFlair.cshtml" />
+    <Content Include="SiteSettings.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
