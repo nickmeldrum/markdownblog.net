@@ -1,11 +1,10 @@
-@helper ArchiveAside() {
+﻿@model MarkdownBlog.Net.Web.Models.TwitterTimeline
+@if (Model != null)
+{
     <div>
-    </div>
-}
-
-@helper TwitterTimelineAside(string query, string url, string widgetId) {
-    <div>
-        <a class="twitter-timeline" href="@url" data-widget-id="@widgetId">Tweets from @query</a>
+        <a class="twitter-timeline" href="@Model.Url" data-widget-id="@Model.WidgetId">Tweets from @Model.Query</a>
         <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
     </div>
+    
+    <hr />
 }
