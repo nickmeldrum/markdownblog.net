@@ -1,6 +1,5 @@
 ﻿@model MarkdownBlog.Net.Web.Models.Post
-
-@{ViewBag.Title = Model.Metadata.Title;}
+@{ ViewBag.Title = Model.Metadata.Title; }
 
 <h2>@Model.Metadata.Title</h2>
 
@@ -10,4 +9,9 @@
     @Html.Raw(Model.Body)
 </article>
 
-@Disqus.ShowComments(Model.Metadata.Title)
+@Html.Partial("Disqus", Model.Disqus)
+
+@section asides
+{
+    @Html.Partial("Asides", Model)
+}

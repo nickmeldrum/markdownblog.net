@@ -5,32 +5,27 @@ using System.Web;
 using MarkdownSharp;
 
 namespace MarkdownBlog.Net.Web.Models {
-    public class Post {
+    public class Post : SiteViewModel {
         private readonly string _postExtension = ".md";
 
         private readonly string _postName;
 
-        private readonly HttpContextWrapper _httpContext;
         private string _body;
         public PostMetadata Metadata { get; private set; }
 
-        public Post(string postName, HttpContextWrapper httpContext)
+        public Post(string postName, HttpContextWrapper httpContext) : base(httpContext)
         {
             _postName = postName;
-            _httpContext = httpContext;
 
-            var posts = new Posts(_httpContext);
-
-            if (!File.Exists(PostBodyPath) || !posts.List.Any(p => p.Title == _postName))
+            if (!File.Exists(PostBodyPath) || !Posts.List.Any(p => p.Title == _postName))
             {
-                httpContext.Response.StatusCode = 404;
-                httpContext.Response.End();
+                throw new FileNotFoundException();
             }
 
-            Metadata = posts.List.Single(p => p.Title == _postName);
+            Metadata = Posts.List.Single(p => p.Title == _postName);
         }
 
-        private string PostBodyPath { get { return _httpContext.Server.MapPath(Posts.PostsRoot + _postName + _postExtension); } }
+        private string PostBodyPath { get { return HttpContext.Server.MapPath(Posts.PostsRoot + _postName + _postExtension); } }
 
         public string Body {
             get {
@@ -45,6 +40,11 @@ namespace MarkdownBlog.Net.Web.Models {
                 }
                 return _body;
             }
+        }
+
+        public Disqus Disqus
+        {
+            get { return new Disqus {ForumShortName = SiteData.DisqusShortName, PageIdentifier = Metadata.Title}; }
         }
     }
 }

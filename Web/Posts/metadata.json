@@ -2,12 +2,14 @@
 	{
 		"Title" : "test blog post",
 		"PublishDate" : "2013-05-01T09:32:00Z",
+		"LastUpdatedDate" : "2013-05-11T09:47:12Z",
 		"Author" : "Nick Meldrum",
 		"ShortDescription" : "This is the short desc for test blog post"
 	},
 	{
 		"Title" : "test blog post 2",
 		"PublishDate" : "2009-02-15T00:00:00Z",
+		"LastUpdatedDate" : "2012-05-11T09:47:12Z",
 		"Author" : "Nick Meldrum",
 		"ShortDescription" : "This is the short desc for test blog post 2"
 	}

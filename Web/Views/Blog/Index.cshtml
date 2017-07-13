@@ -1,14 +1,14 @@
-﻿@model MarkdownBlog.Net.Web.Models.Posts
+﻿@model MarkdownBlog.Net.Web.Models.SiteViewModel
 
-@{
-    ViewBag.Title = "Posts";
+@{ ViewBag.Title = "Posts"; }
+
+<h2>Blog</h2>
+
+@LinkHelpers.FeedLink()
+
+@Html.Partial("Posts", Model.Posts.List)
+
+@section asides
+{
+    @Html.Partial("Asides", Model)
 }
-
-<h2>Blog index</h2>
-
-<h3>Posts:</h3>
-@PostHelpers.RenderPostList(Model.List)
-
-
-<h3>archive:</h3>
-@PostHelpers.RenderMonthlyArchiveLinks(Model.MonthlyArchiveLinks)

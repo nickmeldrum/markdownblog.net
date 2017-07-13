@@ -1,0 +1,7 @@
+﻿@model MarkdownBlog.Net.Web.Models.SiteViewModel
+
+@Html.Partial("StackOverflowFlair", Model.SiteData.StackOverflowFlair)
+
+@Html.Partial("ArchiveLinks", Model.Posts.MonthlyArchiveLinks)
+
+@Html.Partial("TwitterTimeline", Model.SiteData.TwitterTimeline);

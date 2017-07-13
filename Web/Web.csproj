@@ -44,6 +44,9 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="MarkdownSharp">
       <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
     </Reference>
@@ -54,6 +57,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -133,30 +137,41 @@
     <Compile Include="Controllers\BlogControllerBase.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HttpContextExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Content Include="404.html" />
+    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\feed-icon-14x14.png" />
+    <Content Include="Content\images\feed-icon-28x28.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="errors\404.html" />
+    <Content Include="errors\500.html" />
     <Content Include="Posts\test blog post 2.md" />
-    <Content Include="App_Code\PostHelpers.cshtml" />
-    <Content Include="App_Code\Disqus.cshtml" />
+    <Content Include="Views\Shared\Disqus.cshtml" />
+    <Content Include="App_Code\LinkHelpers.cshtml" />
     <None Include="Posts\test blog post.md" />
     <Compile Include="Models\Archive.cs" />
     <Compile Include="Models\ArchiveItem.cs" />
     <Compile Include="Models\ArchiveItemGrouping.cs" />
     <Compile Include="Models\Disqus.cs" />
-    <Compile Include="Models\Home.cs" />
+    <Compile Include="Models\Feed.cs" />
+    <Compile Include="Models\FeedResult.cs" />
+    <Compile Include="Models\FeedType.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostMetaData.cs" />
     <Compile Include="Models\Posts.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\SiteViewModel.cs" />
+    <Compile Include="Models\StackOverflowFlair.cs" />
+    <Compile Include="Models\TwitterTimeline.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
     <Compile Include="NavigationRoutes\NamedRoute.cs" />
     <Compile Include="NavigationRoutes\NavigationExtensions.cs" />
@@ -196,13 +211,22 @@
     <Content Include="Views\Shared\_alerts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Blog\Archive.cshtml" />
+    <Content Include="Views\Shared\ArchiveLinks.cshtml" />
+    <Content Include="Views\Shared\Posts.cshtml" />
+    <Content Include="Views\Shared\PostLink.cshtml" />
+    <Content Include="Views\Shared\Asides.cshtml" />
+    <Content Include="Views\Shared\StackOverflowFlair.cshtml" />
+    <Content Include="SiteSettings.config" />
+    <Content Include="Views\Shared\TwitterTimeline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -7,7 +7,7 @@ namespace MarkdownBlog.Net.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View(new Home(HttpContextWrapper));
+            return View(new SiteViewModel(HttpContextWrapper));
         }
     }
 }

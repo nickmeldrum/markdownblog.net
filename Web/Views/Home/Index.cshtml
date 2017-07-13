@@ -1,7 +1,11 @@
-﻿@model MarkdownBlog.Net.Web.Models.Home
-
-@{ ViewBag.Title = "Blog Home"; }
+﻿@model MarkdownBlog.Net.Web.Models.SiteViewModel
+@{ ViewBag.Title = "Home"; }
 
 <h2>Home</h2>
 
-Latest Post: @PostHelpers.RenderPost(Model.Posts.Latest)
+Latest Post: @Html.Partial("PostLink", Model.Posts.Latest)
+
+@section asides
+{
+    @Html.Partial("Asides", Model)
+}

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MarkdownBlog.Net.Web.Models.PostMetadata>
+
+@if (Model != null) {
+    <ul>
+        @foreach (var postMetadata in Model.OrderByDescending(p => p.PublishDate)) {
+            <li>
+                @Html.Partial("PostLink", postMetadata)
+            </li>
+        }
+    </ul>
+}
